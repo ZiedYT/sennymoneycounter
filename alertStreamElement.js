@@ -27,7 +27,10 @@ function subscription() {
 		else if (data.type == 'tip'){
 			current = current + data.data.amount
 		}
-		current = current.toFixed(1)
+		var num = Number(current) // The Number() only visualizes the type and is not needed
+		var roundedString = num.toFixed(2);
+		current = Number(roundedString); // toFixed() returns a string (often suitable for printing already)
+
 		update()
 	});
 }
