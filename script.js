@@ -45,7 +45,7 @@ client.on('connected', onConnectedHandler);
 client.connect();
 
 // Called every time a message comes in
-function onMessageHandler (target, context, msg, self) {
+function onMessageHandler (chan, context, msg, self) {
   if (self) { return; } // Ignore messages from the bot
   var text = msg.trim();
   console.log(msg)
@@ -54,6 +54,7 @@ function onMessageHandler (target, context, msg, self) {
         var bagnumb = parseInt(text.split(" ")[1]);
         if( !isNaN(bagnumb) ){
             target = bagnumb;
+            current=0
             console.log(bagnumb)
             element.textContent = "DROP LEGO SET: "+ current+"/"+ target 
         }
@@ -66,11 +67,10 @@ function onMessageHandler (target, context, msg, self) {
         }
     }
     else if(text.split(" ")[0] == "!clear"){
-      var bagnumb = parseInt(text.split(" ")[1]);
-      if( !isNaN(bagnumb) ){
-          current = 0;
-          element.textContent = "DROP LEGO SET: "+ current+"/"+ target 
-      }
+
+        current = 0;
+        element.textContent = "DROP LEGO SET: "+ current+"/"+ target 
+      
   }
   }
 }
