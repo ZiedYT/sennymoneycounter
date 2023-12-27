@@ -48,7 +48,6 @@ client.connect();
 function onMessageHandler (chan, context, msg, self) {
   if (self) { return; } // Ignore messages from the bot
   var text = msg.trim();
-  console.log(msg)
   if( context.username.toLowerCase() == channelname.toLowerCase() || context.mod){
     if(text.split(" ")[0] == "!goal"){
         var bagnumb = parseInt(text.split(" ")[1]);
