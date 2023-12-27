@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<title>Progress bar</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+    <style>
+        /* Define the styles for the classes */
+
+        .grey {
+            background-color: #f1f1f1;
+            width: 95%;
+        }
+
+        .round {
+            border-radius: 16px;
+        }
+
+        .blue,
+        .hover-blue:hover {
+            color: black!important;
+            background-color: #2196F3!important;
+        }
+
+        .progress-bar {
+            padding: 8px;
+            width: 20%;
+            color: black;
+            transition: width 0.5s ease;
+            font-weight: bold;
+            font-size: 25px;
+        }
+        .money{
+            padding: 8px;
+            font-size: 50px;
+            background-color: #2196F3!important;
+            font-weight: bold;
+            border-radius: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div class = "money", id ="money">0/500
+  </div>
+</div>
+
+</body>
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
+  integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+
+  <script language="javascript" type="text/javascript" defer src="alertStreamElement.js"></script>
+  <script src="tmi.js"></script>
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
+integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
