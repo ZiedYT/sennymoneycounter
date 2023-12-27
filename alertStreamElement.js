@@ -27,6 +27,7 @@ function subscription() {
 		else if (data.type == 'tip'){
 			current = current + data.data.amount
 		}
+		current = current.toFixed(1)
 		update()
 	});
 }

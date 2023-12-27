@@ -59,9 +59,10 @@ function onMessageHandler (chan, context, msg, self) {
         }
     }
     else if(text.split(" ")[0] == "!current"){
-        var bagnumb = parseInt(text.split(" ")[1]);
+        var bagnumb = parseFloat(text.split(" ")[1]);
         if( !isNaN(bagnumb) ){
             current = bagnumb;
+            
             element.textContent = "DROP LEGO SET: "+ current+"/"+ target 
         }
     }
@@ -71,6 +72,7 @@ function onMessageHandler (chan, context, msg, self) {
         element.textContent = "DROP LEGO SET: "+ current+"/"+ target 
       
   }
+
   }
 }
 
