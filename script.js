@@ -1,15 +1,18 @@
 var bar
 var element
 var bags
+var inner
 var current = 0
 var target = 500
 document.addEventListener("DOMContentLoaded", function() {
-  element = document.querySelector('#bar');
+  element = document.querySelector('#bar'); 
+  inner = document.querySelector('#inner'); 
     bar = document.querySelector('#progress-bar');
     var pcent = Math.floor((current*100)/target)
 
     element.style.width = pcent+"%"
-    element.textContent = current+"/"+target
+    element.textContent = "D"
+    inner.textContent = "Drop Lego Set: "+current+"/"+target
 });    
 
 
@@ -84,8 +87,13 @@ function onConnectedHandler (addr, port) {
 
 function changeWidth(){
   console.log("changeWidth")
+  if(current>target)
+    current = target
   var pcent = Math.floor((current*100)/target)
+
   element.style.width = pcent+"%"
-  element.textContent = current+"/"+ target
+  element.style.width = pcent+"%"
+  element.textContent = "."
+  inner.textContent = "Drop Lego Set: "+current+"/"+target
 }
 
