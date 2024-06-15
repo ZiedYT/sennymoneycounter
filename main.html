@@ -2,14 +2,25 @@
 <html>
 <title>Progress bar</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="tmi.js"></script>
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
+  integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
 
+  <script language="javascript" type="text/javascript" defer src="alertStreamElement.js"></script>
+  <script src="tmi.js"></script>
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
+integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
 <head>
     <style>
         /* Define the styles for the classes */
-
+        body{
+            overflow: hidden; 
+        }
         .grey {
             background-color: #f1f1f1;
-            width: 95%;
+            width: 100%;
         }
 
         .round {
@@ -30,29 +41,16 @@
             font-weight: bold;
             font-size: 25px;
         }
-        .money{
-            width: 750px;
-            padding: 8px;
-            font-size: 50px;
-            background-color: #2196F3!important;
-            font-weight: bold;
-            border-radius: 16px;
-        }
     </style>
 </head>
 <body>
 
-<div class = "money", id ="money">0/500
+<div class=>
+  <div class="grey round">
+    <div class="blue round progress-bar" id="bar">20%</div>
   </div>
 </div>
 
 </body>
 </html>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
-  integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
 
-  <script language="javascript" type="text/javascript" defer src="alertStreamElement.js"></script>
-  <script src="tmi.js"></script>
-<script src="script.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
-integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>

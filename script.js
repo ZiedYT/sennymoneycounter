@@ -1,15 +1,16 @@
+var bar
 var element
 var bags
 var current = 0
 var target = 500
 document.addEventListener("DOMContentLoaded", function() {
-    element = document.querySelector('#money');
-    element.textContent = "DROP LEGO SET: "+ current+"/"+ target 
+  element = document.querySelector('#bar');
+    bar = document.querySelector('#progress-bar');
+    var pcent = Math.floor((current*100)/target)
 
+    element.style.width = pcent+"%"
+    element.textContent = current+"/"+target
 });    
-function update(){
-  element.textContent = "DROP LEGO SET: "+ current+"/"+ target 
-}
 
 
 
@@ -55,7 +56,7 @@ function onMessageHandler (chan, context, msg, self) {
             target = bagnumb;
             current=0
             console.log(bagnumb)
-            element.textContent = "DROP LEGO SET: "+ current+"/"+ target 
+            // element.textContent = "DROP LEGO SET: "+ current+"/"+ target 
         }
     }
     else if(text.split(" ")[0] == "!current"){
@@ -63,20 +64,28 @@ function onMessageHandler (chan, context, msg, self) {
         if( !isNaN(bagnumb) ){
             current = bagnumb;
             
-            element.textContent = "DROP LEGO SET: "+ current+"/"+ target 
+            // element.textContent = "DROP LEGO SET: "+ current+"/"+ target 
         }
     }
     else if(text.split(" ")[0] == "!clear"){
 
         current = 0;
-        element.textContent = "DROP LEGO SET: "+ current+"/"+ target 
+        // element.textContent = "DROP LEGO SET: "+ current+"/"+ target 
       
   }
 
   }
+  changeWidth()
 }
 
 function onConnectedHandler (addr, port) {
   console.log(`* Connected to ${addr}:${port}`);
+}
+
+function changeWidth(){
+  console.log("changeWidth")
+  var pcent = Math.floor((current*100)/target)
+  element.style.width = pcent+"%"
+  element.textContent = current+"/"+ target
 }
 

@@ -31,7 +31,7 @@ function subscription() {
 		var roundedString = num.toFixed(2);
 		current = Number(roundedString); // toFixed() returns a string (often suitable for printing already)
 
-		update()
+		changeWidth()
 	});
 }
 
