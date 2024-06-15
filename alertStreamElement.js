@@ -15,11 +15,11 @@ function subscription() {
 		console.log(data)
 		if (data.type == 'subscriber') {
 			if(data.data.tier == "2000")
-				current = current + 6
+				current = current + 7
 			else if(data.data.tier == "3000")
 				current = current + 17.5
 			else
-				current = current + 2.5
+				current = current + 3.5
 		}
 		else if (data.type == 'cheer') {
 			current = current + data.data.amount/100
