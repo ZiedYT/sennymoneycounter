@@ -86,7 +86,7 @@ function changeWidth(){
     pcent=99.2
   element.style.width = pcent+"%"
   element.style.width = pcent+"%"
-  element.textContent = "."
+  element.textContent = "D"
   inner.textContent = "Drop Lego Set: "+current+"/"+target
   localStorage.setItem("current-moneybar-"+channelname, current)
   localStorage.setItem("target-moneybar-"+channelname, target)
