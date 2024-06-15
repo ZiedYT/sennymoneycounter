@@ -23,7 +23,8 @@ const oauthToken =urlParams.get('key');
 const token =urlParams.get('jwt');  
 
 console.log(token)
-current = parseInt( localStorage.getItem("current-progress-bar-"+channelname) || 0) ;
+current = parseInt( localStorage.getItem("current-moneybar-"+channelname) || 0) ;
+target = parseInt( localStorage.getItem("target-moneybar-"+channelname) || 100) ;
 console.log(current)
 
 if(current==NaN)
@@ -54,29 +55,20 @@ function onMessageHandler (chan, context, msg, self) {
   var text = msg.trim();
   if( context.username.toLowerCase() == channelname.toLowerCase() || context.mod){
     if(text.split(" ")[0] == "!goal"){
-        var bagnumb = parseInt(text.split(" ")[1]);
-        if( !isNaN(bagnumb) ){
-            target = bagnumb;
+        var newtarget = parseInt(text.split(" ")[1]);
+        if( !isNaN(newtarget) ){
+            target = newtarget;
             current=0
-            console.log(bagnumb)
-            // element.textContent = "DROP LEGO SET: "+ current+"/"+ target 
         }
     }
     else if(text.split(" ")[0] == "!current"){
-        var bagnumb = parseFloat(text.split(" ")[1]);
-        if( !isNaN(bagnumb) ){
-            current = bagnumb;
-            
-            // element.textContent = "DROP LEGO SET: "+ current+"/"+ target 
+        var newcurr = parseFloat(text.split(" ")[1]);
+        if( !isNaN(newcurr) ){
+            current = newcurr;
         }
     }
-    else if(text.split(" ")[0] == "!clear"){
-
+    else if(text.split(" ")[0] == "!clear")
         current = 0;
-        // element.textContent = "DROP LEGO SET: "+ current+"/"+ target 
-      
-  }
-
   }
   changeWidth()
 }
@@ -90,10 +82,13 @@ function changeWidth(){
   if(current>target)
     current = target
   var pcent = Math.floor((current*100)/target)
-
+  if(pcent>99)
+    pcent=99.2
   element.style.width = pcent+"%"
   element.style.width = pcent+"%"
   element.textContent = "."
   inner.textContent = "Drop Lego Set: "+current+"/"+target
+  localStorage.setItem("current-moneybar-"+channelname, current)
+  localStorage.setItem("target-moneybar-"+channelname, target)
 }
 
